@@ -1,9 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { DetalhesPage } from "./pages/detalhes";
+import {HomePage } from "./pages/home";
+import {NotFoundPage} from "./pages/notFound";
+import {BrowserRouter,Route,Switch} from "react-router-dom";
 
-function App(props) {
-  return <h1> hello {props.nome}</h1>;
+function App() {
+  return (
+    <BrowserRouter>
+      <Switch>
+      <Route component={HomePage} exact path="/"></Route>
+      <Route component={DetalhesPage} path="/detalhes" ></Route>
+      <Route component={NotFoundPage}></Route>
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App;
